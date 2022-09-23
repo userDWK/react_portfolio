@@ -8,7 +8,6 @@ const Nav = styled.nav`
 const List = styled.ul`
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-flow: wrap;
   margin: 0 auto;
 `;

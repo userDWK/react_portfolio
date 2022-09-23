@@ -1,6 +1,26 @@
 html {
   font-size: 62.5%;
 }
+@media (max-width: 991px) {
+  html {
+    font-size: 51.67%;
+  }
+}
+@media (max-width: 767px) {
+  html {
+    font-size: 40%;
+  }
+}
+@media (max-width: 575px) {
+  html {
+    font-size: 30%;
+  }
+}
+@media (max-width: 373px) {
+  html {
+    font-size: 15%;
+  }
+}
 
 * {
   margin: 0;
@@ -15,4 +35,5 @@ li {
 
 a {
   text-decoration: none;
+  color: inherit;
 }

@@ -13,52 +13,73 @@ const ListItem = styled.li`
   align-items: flex-start;
 
   &:first-child {
-    width: 25%;
+    width: 21%;
+    margin-right: 20%;
     .logo {
-      margin-bottom: 2rem;
-      font-size: 2rem;
+      margin-bottom: 1.4rem;
+      font-size: 4rem;
       font-weight: 700;
+      line-height: 1;
+
+      span {
+        color: #4a6869;
+      }
     }
     p {
-      margin-bottom: 2rem;
-      font-size: 1.5rem;
+      margin-bottom: 3.9rem;
+      font-size: 1.8rem;
     }
     .sns {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1.5rem;
-      border-radius: 1.5rem;
-      border: solid 1px #e9e9ea;
+      justify-content: space-evenly;
+      margin-right: 9.3rem;
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 4rem;
+        height: 4rem;
+        padding: 1.2rem;
+        border-radius: 8.4rem;
+        border: solid 1px #e9e9ea;
+
+        &:hover {
+          background-color: #ccc;
+          color: #698182;
+        }
+      }
     }
   }
 
   &:nth-child(2),
   &:nth-child(3) {
-    width: 20%;
+    width: 16%;
     h2 {
       margin-bottom: 2rem;
       font-weight: 500;
+      font-size: 2.3rem;
+      line-height: 1;
     }
     ul {
       li {
-        margin-bottom: 2rem;
-        font-size: 1.7rem;
+        margin-bottom: 2.3rem;
+        font-size: 1.8rem;
         color: #56565c;
       }
     }
   }
   &:nth-child(4) {
-    width: 35%;
+    width: 22.1%;
+    margin-left: auto;
     ul {
       li {
-        margin-bottom: 2rem;
-        font-size: 1.5rem;
+        margin-bottom: 3.1rem;
+        font-size: 1.7rem;
         color: #858585;
         span {
           display: block;
-          font-size: 1.8rem;
-          margin-bottom: 2rem;
+          padding-top: 0.4rem;
+          font-size: 2rem;
           color: #56565c;
         }
       }
@@ -66,9 +87,9 @@ const ListItem = styled.li`
   }
   &:last-child {
     width: 100%;
-    display: block;
+    margin-top: 5.5rem;
     border-top: solid 1px #eff3f0;
-    padding: 3rem 0;
+    padding: 2.6rem 0;
     color: #78787d;
     text-align: center;
   }
@@ -79,7 +100,9 @@ const FooterNavItem = (props) => {
     <>
       <ListItem className="info">
         <h1 className="logo">
-          <NavLink to="/">Useamer</NavLink>
+          <NavLink to="/">
+            Useamer<span>.</span>
+          </NavLink>
         </h1>
         <p>this is my portfolio.</p>
         <div className="sns">
@@ -137,15 +160,13 @@ const FooterNavItem = (props) => {
           <li>
             DM us on :{" "}
             <span>
-              <a href="mailto:skdoo1213@gmail.com">
-                mailto:skdoo1213@gmail.com
-              </a>
+              <a href="mailto:skdoo1213@gmail.com">skdoo1213@gmail.com</a>
             </span>
           </li>
           <li>
             call us on :{" "}
             <span>
-              <a href="">(+82)010-1111-2222</a>
+              <a href="phone:010-1111-2222">010-1111-2222</a>
             </span>
           </li>
           <li>

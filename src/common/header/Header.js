@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import HeaderNav from "../../components/main/header/nav/HeaderNav";
+import { media } from "../../styleUtil/styleUtil";
 
 const HeaderBox = styled.div`
   width: 100%;
@@ -24,6 +25,10 @@ const HeaderBox = styled.div`
     border: solid 1px #e0e7e1;
     border-radius: 10rem;
   }
+
+  ${media.md`
+  width : 120rem;
+  `}
 `;
 
 const HeaderRow = styled.header`
@@ -32,6 +37,15 @@ const HeaderRow = styled.header`
   width: 132.8rem;
   margin: 0 auto;
   padding: 4rem 0;
+
+  ${media.xl`
+  width : 100%;
+  padding : 4rem 2rem;
+  `}
+
+  ${media.md`
+  width : 100%;
+  `}
 `;
 
 const Header = () => {
