@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 
 export const sizes = {
-  wide: "1200px",
+  wide: "1328px",
   desktop: "992px",
   tablet: "768px",
   phone: "376px",

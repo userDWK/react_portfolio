@@ -1,13 +1,15 @@
-import Header from "./common/Header";
-import Footer from "./common/Footer";
-import Main from "./components/Main";
+import Header from "./common/header/Header";
+import Footer from "./common/footer/Footer";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Community from "./components/Community";
-import Department from "./components/Department";
-import Gallery from "./components/Gallery";
-import Join from "./components/Join";
-import Youtube from "./components/Youtube";
-import Location from "./components/Location";
+import Main from "./components/main/header/navItem/Main";
+import Community from "./components/main/header/navItem/Community";
+import Department from "./components/main/header/navItem/Department";
+import Gallery from "./components/main/header/navItem/Gallery";
+import Join from "./components/main/header/navItem/Join";
+import Youtube from "./components/main/header/navItem/Youtube";
+import Location from "./components/main/header/navItem/Location";
+import "./styleUtil/styles.css";
+
 function App() {
   return (
     <div className="App">
