@@ -1,13 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
-  const clickStyle = { color: "blue" };
+  const clickStyle = { color: "red" };
   return (
     <header>
       <ul className="gnb">
         <li>
           <NavLink exact activeStyle={clickStyle} to="/Community">
-            Community
+            Community ??
           </NavLink>
         </li>
         <li>
