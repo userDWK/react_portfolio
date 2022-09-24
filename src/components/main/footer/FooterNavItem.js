@@ -6,15 +6,16 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { media } from "../../../styleUtil/styleUtil";
 
 const ListItem = styled.li`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 
   &:first-child {
     width: 21%;
     margin-right: 20%;
+    text-align: center;
     .logo {
       margin-bottom: 1.4rem;
       font-size: 4rem;
@@ -32,7 +33,7 @@ const ListItem = styled.li`
     .sns {
       display: flex;
       justify-content: space-evenly;
-      margin-right: 9.3rem;
+
       a {
         display: flex;
         justify-content: center;
@@ -87,12 +88,86 @@ const ListItem = styled.li`
   }
   &:last-child {
     width: 100%;
-    margin-top: 5.5rem;
     border-top: solid 1px #eff3f0;
     padding: 2.6rem 0;
     color: #78787d;
+    margin-top: 5.5rem;
     text-align: center;
+
+    span {
+    }
   }
+
+  ${media.sm`
+    &:first-child{
+      text-align : center;
+      width : 40%;
+      margin-right : 10%;
+
+      .sns {
+        margin : 0;
+      }
+    }
+    &:nth-child(2),&:nth-child(3){
+      width : 25%;
+      text-align : left;
+    }{
+
+    }
+    &:nth-child(4){
+      position : relative;
+      width : 100%;
+      flex-direction: row;
+      border-top : 1px solid#eff3f0;
+      margin-top : 5rem;
+      ul {
+        display : flex;
+        justify-content : space-between;
+        width : 100%;
+        margin-top : 7rem;
+        text-align : center;
+        li {
+          width : 100%;
+        }
+      }
+    }
+    &:last-child {
+
+    }
+    
+  `}
+
+  ${media.xxs`
+    &:first-child{
+      text-align : center;
+      width : 100%;
+      margin : 0;
+
+      .sns {
+        margin : 0;
+      }
+    }
+    &:nth-child(2),&:nth-child(3){
+      display : none;
+    }{
+
+    }
+    &:nth-child(4){
+      width : 100%;
+      flex-direction: row;
+      ul {
+        /* display : flex;
+        justify-content : space-between; */
+        flex-wrap : wrap;
+        /* width : 100%;
+        margin-top : 7rem;
+        text-align : center; */
+        /* li {
+          width : 100%;
+        } */
+      }
+    }    
+  `}
 `;
 
 const FooterNavItem = (props) => {
@@ -182,7 +257,7 @@ const FooterNavItem = (props) => {
       </ListItem>
 
       <ListItem className="copy">
-        &copy; Useamer agency 2022. All rights reserved.
+        <span>&copy; Useamer agency 2022. All rights reserved.</span>
       </ListItem>
     </>
   );

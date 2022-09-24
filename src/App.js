@@ -1,14 +1,14 @@
 import Header from "./common/header/Header";
 import Footer from "./common/footer/Footer";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Main from "./components/main/header/navItem/Main";
-import Community from "./components/main/header/navItem/Community";
-import Department from "./components/main/header/navItem/Department";
-import Gallery from "./components/main/header/navItem/Gallery";
-import Join from "./components/main/header/navItem/Join";
-import Youtube from "./components/main/header/navItem/Youtube";
-import Location from "./components/main/header/navItem/Location";
 import "./styleUtil/styles.css";
+import Community from "./common/main/Community";
+import Department from "./common/main/Department";
+import Join from "./common/main/Join";
+import Youtube from "./common/main/Youtube";
+import Location from "./common/main/Location";
+import Main from "./common/main/Main";
+import Gallery from "./common/main/Gallery";
 
 function App() {
   return (

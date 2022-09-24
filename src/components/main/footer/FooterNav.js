@@ -9,7 +9,6 @@ const List = styled.ul`
   display: flex;
   justify-content: space-between;
   flex-flow: wrap;
-  margin: 0 auto;
 `;
 
 const items = [];

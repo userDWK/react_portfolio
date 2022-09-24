@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import FooterNav from "../../components/main/footer/FooterNav";
-
+import { media } from "../../styleUtil/styleUtil";
 const FooterBox = styled.div`
   width: 100%;
   margin-top: 3rem;
@@ -10,8 +10,12 @@ const FooterBox = styled.div`
 
 const FooterRow = styled.footer`
   display: flex;
-  width: 120rem;
+  width: 100%;
   margin: 0 auto;
+
+  ${media.xl`
+  /* width : 100%; */
+  `}
 `;
 
 const Footer = () => {
