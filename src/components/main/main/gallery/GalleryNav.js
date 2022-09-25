@@ -7,7 +7,7 @@ const List = styled.ul`
   display: flex;
   /* flex-direction: row; */
   width: 114rem;
-  margin: 3.9rem auto;
+  margin: 3.9rem auto 0;
 `;
 
 const SecondList = styled(List)`
