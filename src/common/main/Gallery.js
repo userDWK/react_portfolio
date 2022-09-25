@@ -1,3 +1,5 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import {
   GalleryNav1,
@@ -43,6 +45,25 @@ const GalleryBox2 = styled.div`
 const MainRow = styled.main``;
 
 const Gallery = () => {
+  const [flickr, setFlickr] = useState([]);
+  const url = process.env.PUBLIC_URL;
+
+  const key = "d04b1d4d950cdbfb8d7c4350bab2c8da";
+  const method = "flickr.interestingness.getList";
+  const per_page = "20";
+  const flickrUrl = `https://www.flickr.com/services/rest/?method=${method}&format=json&api_key=${key}&per_page=${per_page}&nojsoncallback=1`;
+
+  useEffect(() => {
+    axios
+      .get(flickrUrl)
+      .then((json) => {
+        setFlickr(json.data.photos.photo);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
+
   return (
     <>
       <GalleryBox1 className="GalleryConts1">
