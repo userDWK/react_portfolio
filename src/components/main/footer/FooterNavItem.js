@@ -156,8 +156,7 @@ const ListItem = styled.li`
       width : 100%;
       flex-direction: row;
       ul {
-        /* display : flex;
-        justify-content : space-between; */
+
         flex-wrap : wrap;
         /* width : 100%;
         margin-top : 7rem;
