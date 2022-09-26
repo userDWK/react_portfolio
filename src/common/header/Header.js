@@ -77,8 +77,6 @@ const HeaderBox = styled.div`
       }
     }
     &:active {
-      /* box-shadow: 0 0.1rem 0.5rem rgba(21, 247, 105, 0.3),
-        0 0.1rem 0.15rem rgba(21, 247, 105, 0.5); */
       ${shadow(2)}
     }
   }
