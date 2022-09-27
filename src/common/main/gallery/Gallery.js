@@ -4,13 +4,13 @@ import Section_2 from "./home/Section_2";
 
 const Gallery = () => {
   return (
-    <Main>
+    <MainCon>
       <Section_1 />
       <Section_2 />
-    </Main>
+    </MainCon>
   );
 };
 
 export default Gallery;
 
-const Main = styled.main``;
+const MainCon = styled.main``;

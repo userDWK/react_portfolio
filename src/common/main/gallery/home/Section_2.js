@@ -1,6 +1,34 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Section_2 = () => {
+  const [flickr, setFlickr] = useState([]);
+  const url = process.env.PUBLIC_URL;
+
+  const key = "d04b1d4d950cdbfb8d7c4350bab2c8da";
+  const method1 = "flickr.interestingness.getList";
+  const method2 = "flickr.profile.getProfile";
+  const per_page = "20";
+  const flickrUrl1 = `https://www.flickr.com/services/rest/?method=${method1}&format=json&api_key=${key}&per_page=${per_page}&nojsoncallback=1`;
+  const flickrUrl2 = `https://www.flickr.com/services/rest/?method=${method2}&format=json&api_key=${key}&user_id=196646791@N08&per_page=${per_page}&nojsoncallback=1`;
+
+  const getFlickr = (url) => {
+    axios
+      .get(url)
+      .then((json) => {
+        setFlickr(json.data.photos.photo);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+  useEffect(() => {
+    getFlickr(flickrUrl1);
+    console.log(flickr);
+  }, []);
+
   return (
     <SectionCon>
       <Row>
@@ -17,13 +45,24 @@ const Section_2 = () => {
               </PWrap>
             </TitleBoxLeft>
             <Masonry>
-              <Item>
-                <ImgWrap>
-                  <img src="" alt="" />
-                </ImgWrap>
-                <ImgTitle>Window 11</ImgTitle>
-                <P_1>Microsoft</P_1>
-              </Item>
+              {flickr.map((photo, idx) => {
+                const photoUrl = `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_z.jpg`;
+                const iconUrl = `http://farm66.staticflickr.com/${photo.server}/buddyicons/${photo.owner}.jpg`;
+                const titLen = photo.title.length;
+                return (
+                  <li key={idx}>
+                    <div className="imgWrap">
+                      <img src={photoUrl} alt={`pic${idx}`} />
+                    </div>
+                    <div className="tit">
+                      {<img src={iconUrl} alt={`icon${idx}`} />}
+                      {titLen > 20
+                        ? photo.title.slice(0, 40) + "..."
+                        : photo.title}
+                    </div>
+                  </li>
+                );
+              })}
             </Masonry>
           </Content_Left>
 
